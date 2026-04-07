@@ -10,14 +10,20 @@ public class Main {
 		System.out.println("1:グー　2:チョキ　3:パー");
 		
 		Scanner x = new Scanner(System.in);
-		int hand = x.nextInt();
-		System.out.println(hand);
+		int hand;
 		
 		Random y = new Random();
-		int cpuhand = y.nextInt(3)+1;
+		int cpuhand;
 		
+		
+		do {
+			hand = x.nextInt();
+			cpuhand = y.nextInt(3)+1;
+			
 		if (hand == cpuhand) {
-			System.out.println("あいこ");
+			System.out.println("あいこで・・・何を出しますか？");
+			System.out.println("1:グー　2:チョキ　3:パー");
+			
 			} else if (hand == 1 && cpuhand == 2) {
 				System.out.println("勝ち");
 			} else if (hand == 2 && cpuhand == 3) {
@@ -27,6 +33,8 @@ public class Main {
 			} else {
 				System.out.println("負け");
 			}
+			} while (hand == cpuhand);
+		
 		
 	}
 
