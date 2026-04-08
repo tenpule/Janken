@@ -6,22 +6,46 @@ public class Main {
 		
 		System.out.println("じゃんけんゲーム開始");
 		
-		System.out.println("何を出しますか？数字を入力してね！");
-		System.out.println("1:グー　2:チョキ　3:パー");
-		
 		Scanner x = new Scanner(System.in);
 		int hand;
 		
 		Random y = new Random();
 		int cpuhand;
 		
+		int play = 1;
+		
+		while (play == 1) {
+			System.out.println("何を出しますか？数字を入力してね！");
+			System.out.println("1:グー　2:チョキ　3:パー");
+		
 		
 		do {
 			hand = x.nextInt();
 			cpuhand = y.nextInt(3)+1;
 			
+			String playerHand = "";
+			if (hand == 1) {
+				playerHand = "グー";
+			} else if (hand == 2) {
+				playerHand = "チョキ";
+			} else if (hand == 3) {
+				playerHand = "パー";
+			}
+			
+			String cpuHand = "";
+			if (cpuhand == 1) {
+				cpuHand = "グー";
+			} else if (cpuhand == 2) {
+				cpuHand = "チョキ";
+			} else if (cpuhand == 3) {
+				cpuHand = "パー";
+			}
+			
+			System.out.println("あなた：" + playerHand);
+			System.out.println("CPU：" + cpuHand);
+			
 		if (hand == cpuhand) {
-			System.out.println("あいこで・・・何を出しますか？");
+			System.out.println("あいこで・・・");
 			System.out.println("1:グー　2:チョキ　3:パー");
 			
 			} else if (hand == 1 && cpuhand == 2) {
@@ -35,7 +59,14 @@ public class Main {
 			}
 			} while (hand == cpuhand);
 		
+		System.out.println("もう１回やる？　1:はい　0:いいえ");
+		play = x.nextInt();
+		
+		}
+		
 		
 	}
 
 }
+
+
